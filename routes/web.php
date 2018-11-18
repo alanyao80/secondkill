@@ -20,6 +20,9 @@ Route::get('/hello', function () {
 });
 
 Route::group(['prefix'=>'admin','namespace'=>'Admin'],function (){
+    Route::match(['get','post'],'/student', 'StudentController@index');
+
+
     Route::match(['get','post'],'/', 'Index@index');
     Route::match(['get','post'],'/login', 'Login@index');
     Route::match(['get','post'],'/gologin', 'Login@login');
