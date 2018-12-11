@@ -15,6 +15,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/order/addGoods', 'Order@addGoods');
+Route::get('/order/secondKill', 'Order@secondKill');
+
+
 Route::get('/hello', function () {
     return "hello world";
 });
@@ -24,6 +28,7 @@ Route::group(['prefix'=>'admin','namespace'=>'Admin'],function (){
 
 
     Route::match(['get','post'],'/', 'Index@index');
+    Route::match(['get','post'],'/show', 'Index@show');
     Route::match(['get','post'],'/login', 'Login@index');
     Route::match(['get','post'],'/gologin', 'Login@login');
 

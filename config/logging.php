@@ -31,11 +31,12 @@ return [
     |                    "custom", "stack"
     |
     */
+    //emergency、alert、critical、error、warning、 notice、info  debug：
 
     'channels' => [
         'stack' => [
             'driver' => 'stack',
-            'channels' => ['single'],
+            'channels' => ['daily'],
         ],
 
         'single' => [
@@ -47,7 +48,7 @@ return [
         'daily' => [
             'driver' => 'daily',
             'path' => storage_path('logs/laravel.log'),
-            'level' => 'debug',
+            'level' => 'info',
             'days' => 7,
         ],
 
